@@ -1,0 +1,16 @@
+subnet_mask = str(input("Enter the subnet mask plz: "))  #255.255.255.0
+
+def wildcard_conversion(subnet):
+    wildcard = []
+    for x in subnet.split('.'): #255
+        component = 255 - int(x)
+        wildcard.append(str(component))
+    wildcard = '.'.join(wildcard)
+    return wildcard
+
+print(wildcard_conversion(subnet_mask))
+
+"""
+What is a wildmask?
+255 - subnetmask = wildmask
+"""
